@@ -4,9 +4,9 @@ A demo app with Android Jetpack / Architecture Components written in Kotlin.
 
 Libraries Used
 --------------
-* [Foundation]
-  * [AppCompat][0] - Degrade gracefully on older versions of Android.
-  * [Test][1] - An Android testing framework for unit and runtime UI tests.
+* [Foundation][0] - Core system capabilities
+  * [AppCompat][1] - Degrade gracefully on older versions of Android.
+  * [Test][2] - An Android testing framework for unit and runtime UI tests.
 * [Architecture][10] - Architecture components
   * [Data Binding][11] - Declaratively bind observable data to UI elements.
   * [Lifecycles][12] - Create a UI that automatically responds to lifecycle events.

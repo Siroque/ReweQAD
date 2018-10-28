@@ -1,0 +1,70 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion 28
+    dataBinding {
+        enabled = true
+    }
+    defaultConfig {
+        applicationId "com.example.sin.reweqad"
+        minSdkVersion 27
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    // Jetpack
+    implementation "com.google.android.material:material:$supportLibraryVersion"
+    implementation "androidx.appcompat:appcompat:$supportLibraryVersion"
+    implementation "androidx.recyclerview:recyclerview:$supportLibraryVersion"
+    implementation "androidx.annotation:annotation:$supportLibraryVersion"
+    implementation "androidx.core:core-ktx:$supportLibraryVersion"
+
+    // Android Architecture Components
+    implementation "android.arch.navigation:navigation-fragment-ktx:$navigationVersion"
+    implementation "android.arch.navigation:navigation-ui-ktx:$navigationVersion"
+
+    implementation "androidx.lifecycle:lifecycle-extensions:$lifecycleVersion"
+    //kapt "androidx.lifecycle:lifecyclecompiler:$lifecycleVersion"
+
+    implementation "androidx.room:room-runtime:$roomVersion"
+    kapt "androidx.room:room-compiler:$roomVersion"
+    kapt "android.arch.persistence.room:compiler:1.0.0"
+
+    implementation "android.arch.work:work-runtime-ktx:$workVersion"
+
+    // Logging
+    implementation 'com.orhanobut:logger:2.2.0'
+
+    //UI
+    implementation "androidx.constraintlayout:constraintlayout:$constraintLayoutVersion"
+    implementation "androidx.fragment:fragment-ktx:$fragmentVersion"
+    //kapt "androidx.fragment:lifecyclecompiler:$lifecycleVersion"
+    implementation "androidx.viewpager:viewpager:$supportLibraryVersion"
+
+    //Internal
+    implementation "com.google.code.gson:gson:$gsonVersion"
+    implementation "com.squareup.retrofit2:retrofit:$retrofitVersion"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofitVersion"
+    //implementation "com.squareup.okhttp3:okhttp:$okhttpVersion"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion"
+
+    //Test
+    testImplementation "junit:junit:$junitVersion"
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+}
